@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail Azzamine</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .card {
+            padding: 10px; 
+        }
+        .card .card-body {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="padding: 15px;">
+        <div class="row">
+            <div class="col-md-8">
+            <span class="justify-content-start"><a href="javascript:history.back()"><i class="fas fa-circle-chevron-left" ></i> Back</a>            </span>
+        </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="card" style="max-width: 800px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img id="gambar" class="card-img">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 id="penulis" class="card-title"></h5>
+                                <p id="judul" class="card-text"></p>
+                                <h5 class="card-title">Deskripsi Buku</h5>
+                                <p id="deskripsi" class="card-text" style="font-size: 13px; text-align: justify;"></p>
+                                <p>Sinopsis Buku</p>
+                                <p id="sinopsis" class="text-justify"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h5 class="card-title">
+                        Detail
+                    </h5>
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="card-text" style="font-size: 13px; font-weight: bold; text-align: justify; margin-bottom: 5px;">Jumlah Halaman</p>
+                                    <p id="jumlah_halaman" class="card-text" style="font-size: 13px; text-align: justify;"></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="card-text" style="font-size: 13px; font-weight: bold; text-align: justify; margin-bottom: 5px;">Penerbit</p>
+                                    <p id="penerbit" class="card-text" style="font-size: 13px; text-align: justify;color: blue;"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="card-text" style="font-size: 13px; font-weight: bold; text-align: justify; margin-bottom: 5px;">Tanggal Terbit</p>
+                                    <p id="tanggal_terbit" class="card-text" style="font-size: 13px; text-align: justify;"></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="card-text" style="font-size: 13px; font-weight: bold; text-align: justify; margin-bottom: 5px;">Berat</p>
+                                    <p id="berat" class="card-text" style="font-size: 13px; text-align: justify;"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="card-text" style="font-size: 13px; font-weight: bold; text-align: justify; margin-bottom: 5px;">ISBN</p>
+                                    <p id="isbn" class="card-text" style="font-size: 13px; text-align: justify;"></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="card-text" style="font-size: 13px; font-weight: bold; text-align: justify; margin-bottom: 5px;">Lebar</p>
+                                    <p id="lebar" class="card-text" style="font-size: 13px; text-align: justify;"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="card-text" style="font-size: 13px; font-weight: bold; text-align: justify; margin-bottom: 5px;">Bahasa</p>
+                                    <p id="bahasa" class="card-text" style="font-size: 13px; text-align: justify;"></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="card-text" style="font-size: 13px; font-weight: bold; text-align: justify; margin-bottom: 5px;">Panjang</p>
+                                    <p id="panjang" class="card-text" style="font-size: 13px; text-align: justify;"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <script src="assets/js/data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const getQueryParam = (name) => {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(name);
+        };
+      
+        const bookQuery = getQueryParam('buku');
+
+      
+        if (bookQuery) {
+          const selectedBook = imageInfoArray.find((book) => book.api === bookQuery);
+      
+          if (selectedBook) {
+            document.title = `Detail ${selectedBook.title}`;
+            document.getElementById('gambar').src = `../assets/image/${selectedBook.filename}`;
+            document.getElementById('penulis').textContent = selectedBook.author;
+            document.getElementById('judul').textContent = selectedBook.title;
+            document.getElementById('deskripsi').textContent = selectedBook.description;
+            document.getElementById('sinopsis').textContent = selectedBook.sinopsis;
+            document.getElementById('jumlah_halaman').textContent = selectedBook.jumlahHalaman;
+            document.getElementById('penerbit').textContent = selectedBook.penerbit;
+            document.getElementById('tanggal_terbit').textContent = selectedBook.pubDate;
+            document.getElementById('berat').textContent = selectedBook.weight + ' kg';
+            document.getElementById('isbn').textContent = selectedBook.isbn;
+            document.getElementById('lebar').textContent = selectedBook.width + ' cm';
+            document.getElementById('bahasa').textContent = selectedBook.language;
+            document.getElementById('panjang').textContent = selectedBook.height + ' cm';
+          } else {
+            document.body.innerHTML = '<h1>Buku tidak ditemukan</h1>';
+          }
+        } else {
+          document.body.innerHTML = '<h1>Query buku tidak ditemukan</h1>';
+        }
+      </script>
+</body>
+</html>

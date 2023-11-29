@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+
+    <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.3/dist/tippy-bundle.umd.min.js"></script>
+
+    <link
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Peminjaman Buku</title>
+  </head>
+  <body class="bg-gray-100">
+    <nav class="bg-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <span class="text-blue-500 text-lg font-semibold ml-9"
+          >Perpustakaan</span
+        >
+        <div class="relative flex items-center mx-auto">
+          <input
+            type="text"
+            placeholder="Cari Produk, Judul Buku"
+            class="bg-gray-100 text-gray-800 rounded-full py-2 px-4 focus:outline-none focus:shadow-outline w-96"
+          />
+          <div class="absolute right-0 top-0 mt-2 mr-3">
+            <i class="fas fa-search text-gray-500"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="header">
+      <!--Content before waves-->
+      <div class="inner-header flex"></div>
+
+      <!--Waves Container-->
+      <div>
+        <svg
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
+          </defs>
+          <g class="parallax">
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="0"
+              fill="rgba(255,255,255,0.7"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="rgba(255,255,255,0.5)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgba(255,255,255,0.3)"
+            />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+          </g>
+        </svg>
+      </div>
+      <!--Waves end-->
+    </div>
+    <section id="rekomendasi" class="p-8 mt-4" style="padding: 50px">
+      <div class="container mx-auto">
+        <h2 class="text-2xl font-semibold mb-4 ml-9">
+          Rekomendasi Buku Untukmu
+        </h2>
+        <div class="text-right">
+          <a href="/semua.html?tipe=rekomendasi" class="text-blue-500 font-semibold">
+            Lihat Semua
+          </a>
+        </div>
+        <div
+          class="ml-10 grid grid-cols-12 md:grid-cols-12 lg:grid-cols-3 xl:grid-cols-2 gap-8 scrolling-container"
+          id="imageContainer"
+        ></div>
+      </div>
+    </section>
+    <hr />
+    <section id="populer" class="p-8 mt-4" style="padding: 50px">
+      <h2 class="text-2xl font-semibold mb-4 ml-9">Buku Buku Terpopuler</h2>
+      <div class="text-right">
+        <a href="/semua.html?tipe=favorit" class="text-blue-500 font-semibold">
+          Lihat Semua
+        </a>
+      </div>
+      <div class="ml-9 flex">
+        <div>
+          <a href="favorit.html">
+            <img
+              src="assets/image/populer.png"
+              class="card-img-top"
+              style="height: 420px; max-height: 420px; max-width: 204px"
+              alt="Populer Favorit"
+            />
+          </a>
+        </div>
+        <div
+          class="ml-4 grid grid-cols-12 md:grid-cols-12 lg:grid-cols-3 xl:grid-cols-2 gap-8 scrolling-container"
+          id="populerr"
+        ></div>
+      </div>
+    </section>
+    <section id="fiksi" class="p-8 mt-4" style="padding: 50px">
+      <h2 class="text-2xl font-semibold mb-4 ml-9">Fiksi Favorit</h2>
+      <div class="text-right">
+        <a href="/semua.html?tipe=fiksi" class="text-blue-500 font-semibold">
+          Lihat Semua
+        </a>
+      </div>
+      <div class="ml-9 flex">
+        <div>
+          <a href="fiksi.html">
+            <img
+              src="assets/image/Fiksi.png"
+              class="card-img-top"
+              style="height: 420px; max-height: 420px; max-width: 204px"
+              alt="Fiksi Favorit"
+            />
+          </a>
+        </div>
+        <div
+          class="ml-4 grid grid-cols-12 md:grid-cols-12 lg:grid-cols-3 xl:grid-cols-2 gap-8 scrolling-container"
+          id="fiksii"
+        ></div>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/aef74effcf.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"
+      integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  </body>
+</html>
