@@ -53,10 +53,6 @@
                                     <p class="card-text" style="font-size: 13px; font-weight: bold; text-align: justify; margin-bottom: 5px;">Jumlah Halaman</p>
                                     <p id="jumlah_halaman" class="card-text" style="font-size: 13px; text-align: justify;"></p>
                                 </div>
-                                <div class="col-md-6">
-                                    <p class="card-text" style="font-size: 13px; font-weight: bold; text-align: justify; margin-bottom: 5px;">Penerbit</p>
-                                    <p id="penerbit" class="card-text" style="font-size: 13px; text-align: justify;color: blue;"></p>
-                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -118,8 +114,7 @@
             document.getElementById('judul').textContent = selectedBook.title;
             document.getElementById('deskripsi').textContent = selectedBook.description;
             document.getElementById('sinopsis').textContent = selectedBook.sinopsis;
-            document.getElementById('jumlah_halaman').textContent = selectedBook.jumlahHalaman;
-            document.getElementById('penerbit').textContent = selectedBook.penerbit;
+            document.getElementById('jumlah_halaman').textContent = selectedBook.pages.split('.')[0];
             document.getElementById('tanggal_terbit').textContent = selectedBook.pubDate;
             document.getElementById('berat').textContent = selectedBook.weight + ' kg';
             document.getElementById('isbn').textContent = selectedBook.isbn;
