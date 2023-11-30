@@ -15,6 +15,12 @@
       href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
     <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.3/dist/tippy-bundle.umd.min.js"></script>
 
@@ -26,9 +32,9 @@
     <title>Peminjaman Buku</title>
   </head>
   <body class="bg-gray-100">
-     <nav class="bg-gray-800 p-4">
+    <nav class="bg-gray-800 p-4">
       <div class="container mx-auto flex justify-between items-center">
-        <div class="flex items-center ml-10">
+        <div class="flex items-center ml-4 sm:ml-10">
           <img
             src="./assets/image/logo.png"
             alt="Library Icon"
@@ -38,7 +44,7 @@
         </div>
       </div>
     </nav>
-    <div class="header">
+    <div class="header relative text-center">
       <!--Content before waves-->
       <div class="inner-header flex"></div>
 
@@ -63,7 +69,7 @@
               xlink:href="#gentle-wave"
               x="48"
               y="0"
-              fill="rgba(255,255,255,0.7"
+              fill="rgba(255,255,255,0.7)"
             />
             <use
               xlink:href="#gentle-wave"
@@ -83,13 +89,16 @@
       </div>
       <!--Waves end-->
     </div>
-    <section id="rekomendasi" class="p-8 mt-4" style="padding: 50px">
+    <section id="rekomendasi" class="p-8 mt-4" style="padding: 5% 10%;">
       <div class="container mx-auto">
         <h2 class="text-2xl font-semibold mb-4 ml-9">
           Rekomendasi Buku Untukmu
         </h2>
         <div class="text-right">
-          <a href="/semua.html?tipe=rekomendasi" class="text-blue-500 font-semibold">
+          <a
+            href="/semua.html?tipe=rekomendasi"
+            class="text-blue-500 font-semibold"
+          >
             Lihat Semua
           </a>
         </div>
@@ -100,7 +109,7 @@
       </div>
     </section>
     <hr />
-    <section id="populer" class="p-8 mt-4" style="padding: 50px">
+    <section id="populer" class="p-8 mt-4" style="padding: 5% 10%;">
       <h2 class="text-2xl font-semibold mb-4 ml-9">Buku Buku Terpopuler</h2>
       <div class="text-right">
         <a href="/semua.html?tipe=favorit" class="text-blue-500 font-semibold">
@@ -108,8 +117,8 @@
         </a>
       </div>
       <div class="ml-9 flex">
-        <div>
-          <a href="/semua.html?tipe=favorit">
+        <div class="mb-4 md:mr-4 md:mb-0 hidden md:block">
+          <a href="favorit.html">
             <img
               src="assets/image/populer.png"
               class="card-img-top"
@@ -124,7 +133,7 @@
         ></div>
       </div>
     </section>
-    <section id="fiksi" class="p-8 mt-4" style="padding: 50px">
+    <section id="fiksi" class="p-8 mt-4" style="padding: 5% 10%;">
       <h2 class="text-2xl font-semibold mb-4 ml-9">Fiksi Favorit</h2>
       <div class="text-right">
         <a href="/semua.html?tipe=fiksi" class="text-blue-500 font-semibold">
@@ -132,8 +141,8 @@
         </a>
       </div>
       <div class="ml-9 flex">
-        <div>
-          <a href="/semua.html?tipe=fiksi">
+        <div class="mb-4 md:mr-4 md:mb-0 hidden md:block">
+          <a href="fiksi.html">
             <img
               src="assets/image/Fiksi.png"
               class="card-img-top"
