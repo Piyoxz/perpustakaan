@@ -18,7 +18,6 @@ body {
   background: url('/assets/image/section1.png') center center no-repeat;
   background-size: cover;
   color: white;
-  padding: 20% 0;
 
   @media (max-width: 768px) {
     display: none;
